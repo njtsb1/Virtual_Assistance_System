@@ -62,6 +62,6 @@ To assist with the project, two examples are available: one for text-to-speech a
 - [Text-to-speech](https://github.com/diegobrunoDIO/Text-to-Speech-DIO)
 - [Speech-to-text](https://github.com/diegobrunoDIO/Speech-to-text-ML-DIO)
 
-![Virtual Assistant](docs/assets/virtual_assistant.png)
+<img width="1452" height="768" alt="virtual_assistant" src="https://github.com/user-attachments/assets/ced7d452-9473-431d-b780-8204e812c3df" />
 
 [LICENSE](/LICENSE)
