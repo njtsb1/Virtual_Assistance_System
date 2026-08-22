@@ -1,0 +1,149 @@
+:root{
+  --bg-dark:#0f1720;
+  --panel-dark:#111827;
+  --text-dark:#e6eef8;
+  --muted-dark:#9aa7b6;
+  --accent:#4f46e5;
+
+  --bg-light:#f7fafc;
+  --panel-light:#ffffff;
+  --text-light:#0b1220;
+  --muted-light:#475569;
+  --accent-light:#2563eb;
+
+  --radius:12px;
+  --gap:16px;
+  --max-width:980px;
+  --container-padding:16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg-dark);
+  color:var(--text-dark);
+  line-height:1.4;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+/* Theme toggles */
+body.theme-dark{
+  background:linear-gradient(180deg,var(--bg-dark),#071021);
+  color:var(--text-dark);
+}
+body.theme-dark .panel{background:var(--panel-dark); color:var(--text-dark)}
+body.theme-dark .muted{color:var(--muted-dark)}
+body.theme-dark .accent{color:var(--accent)}
+
+body.theme-light{
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+body.theme-light .panel{background:var(--panel-light); color:var(--text-light)}
+body.theme-light .muted{color:var(--muted-light)}
+body.theme-light .accent{color:var(--accent-light)}
+
+/* Header */
+.site-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px var(--container-padding);
+  gap:12px;
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.brand h1{margin:0;font-size:1.1rem}
+.brand p{margin:0;font-size:0.85rem;opacity:0.8}
+
+/* Controls */
+.controls{display:flex;gap:8px;align-items:center}
+.icon-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:inherit;
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+}
+.icon{width:20px;height:20px;fill:currentColor;display:block}
+#icon-sun{display:none}
+
+/* Container */
+.container{
+  max-width:var(--max-width);
+  margin:20px auto;
+  padding:var(--container-padding);
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:20px;
+  width:100%;
+}
+
+/* Assistant panel */
+.assistant{
+  padding:18px;
+  border-radius:var(--radius);
+  background:rgba(255,255,255,0.02);
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+}
+.assistant h2{margin-top:0}
+.status{font-size:0.9rem;margin-bottom:12px;color:var(--muted-dark)}
+.controls-row{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.primary{
+  background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:10px;cursor:pointer;
+}
+.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;cursor:pointer;color:inherit}
+.icon-btn:focus, .primary:focus, .secondary:focus, .link-btn:focus {outline:3px solid rgba(79,70,229,0.18);outline-offset:2px}
+
+/* Textarea */
+#text-input{
+  width:100%;
+  border-radius:10px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.04);
+  background:transparent;
+  color:inherit;
+  resize:vertical;
+  min-height:80px;
+}
+
+/* Quick actions */
+.quick-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.link-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;cursor:pointer;color:inherit;
+}
+
+/* Transcript */
+.transcript{
+  margin-top:14px;padding:12px;border-radius:8px;background:rgba(0,0,0,0.12);min-height:60px;color:var(--text-dark);
+}
+
+/* Notes aside */
+.notes{
+  padding:18px;border-radius:var(--radius);background:rgba(255,255,255,0.02);
+}
+.notes h3{margin-top:0}
+
+/* Footer */
+.site-footer{padding:12px;text-align:center;font-size:0.85rem;color:var(--muted-dark)}
+
+/* Accessibility helpers */
+.visually-hidden{
+  position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr; padding:12px}
+  .notes{order:2}
+}
+
+/* Theme icon swap */
+body.theme-light #icon-sun{display:block}
+body.theme-light #icon-moon{display:none}
+
+/* Small adjustments for light theme contrast */
+body.theme-light .primary{background:var(--accent-light)}

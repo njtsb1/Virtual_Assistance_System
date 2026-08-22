@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Assistant</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="theme-dark" data-theme="dark">
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <h1 id="app-title">Virtual Assistant</h1>
+      <p id="app-subtitle">Lightweight voice assistant demo</p>
+    </div>
+
+    <div class="controls" role="region" aria-label="Controls">
+      <label for="lang-select" class="visually-hidden">Language</label>
+      <select id="lang-select" aria-label="Select language">
+        <option value="en-US">English (EN-US)</option>
+        <option value="pt-BR">Português (PT-BR)</option>
+        <option value="es-ES">Español (ES)</option>
+      </select>
+
+      <button id="theme-toggle" class="icon-btn" aria-pressed="true" aria-label="Toggle theme">
+        <!-- Moon icon (dark) and Sun icon (light) toggled by CSS/JS -->
+        <svg id="icon-moon" class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+        </svg>
+        <svg id="icon-sun" class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.8 1.8-1.8zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zM4.84 20.83l1.79-1.79-1.8-1.8-1.79 1.79 1.8 1.8zM20 13v-2h3v2h-3zM17.24 4.84l1.8-1.79 1.79 1.79-1.8 1.8-1.79-1.8zM12 6a6 6 0 100 12 6 6 0 000-12z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" role="main" class="container">
+    <section class="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Assistant</h2>
+
+      <div class="status" role="status" aria-live="polite" id="status">Ready</div>
+
+      <div class="controls-row">
+        <button id="listen-btn" class="primary" aria-pressed="false" aria-label="Start listening">
+          🎤 <span id="listen-label">Listen</span>
+        </button>
+
+        <button id="stop-btn" class="secondary" aria-label="Stop listening" disabled>
+          ⏹ Stop
+        </button>
+
+        <button id="speak-btn" class="secondary" aria-label="Speak text">
+          🔊 Speak
+        </button>
+      </div>
+
+      <label for="text-input" class="visually-hidden">Assistant input</label>
+      <textarea id="text-input" rows="4" placeholder="Type or use voice input" aria-label="Assistant input"></textarea>
+
+      <div class="quick-actions" role="group" aria-label="Quick actions">
+        <button data-action="search-wikipedia" class="link-btn">Search Wikipedia</button>
+        <button data-action="open-youtube" class="link-btn">Open YouTube</button>
+        <button data-action="find-pharmacy" class="link-btn">Find Nearby Pharmacy</button>
+      </div>
+
+      <div class="transcript" aria-live="polite" id="transcript" tabindex="0"></div>
+    </section>
+
+    <aside class="notes" aria-labelledby="notes-heading">
+      <h3 id="notes-heading">Notes</h3>
+      <ul>
+        <li>Works offline for UI; speech features require browser support.</li>
+        <li>Default theme is dark. Toggle to switch to light.</li>
+        <li>Supported languages: English, Portuguese (Brazil), Spanish.</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>&copy; Developed by Nivaldo Beirão</small>
+  </footer>
+
+  <script src="./src/script.js" defer></script>
+</body>
+</html>
