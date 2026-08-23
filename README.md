@@ -6,7 +6,7 @@ This project involves developing a virtual assistant system using **NLP (Natural
 
 - A text-to-speech module;
 - A speech-to-text module (converting human natural language into text);
-- The second module must trigger automated functions via voice commands, such as: opening a Wikipedia search, opening YouTube, or displaying the location at Google Maps of the nearest pharmacy.
+- The second module must trigger automated functions via voice commands, such as: opening a **Wikipedia** search, opening **YouTube**, or displaying the location at **Google Maps** of the nearest pharmacy.
 
 You may use any of the libraries introduced in the course to complete this project, particularly the Python SpeechRecognition library.
 
